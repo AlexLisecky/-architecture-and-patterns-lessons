@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="header">
+    <h1>Another New Day</h1>
+</div>
+<div id="showcase">
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam posuere risus eget eros gravida egestas.
+        Sed vulputate interdum nisl. Fusce nibh ligula, ultricies a, ultricies sit amet, bibendum vitae, orci.
+    </p>
+</div>
+<br>
+<br>
+
+<div>
+    <a href="/create_course/?id={{id}}">Создать новый курс</a>
+    <br>
+    <h1>Список курсов для категории "{{name}}"</h1>
+    {% for item in objects_list %}
+    <li>
+        {{item.name}} <span><a href="/copy_course/?name={{item.name}}">скопировать</a></span>
+    </li>
+    {% endfor %}
+</div>
+<div id="footer">
+    <p>&copy; Name | Design by <a rel="nofollow" target="_blank" href="http://writeside.net">Payal Dhar</a> | <a
+            rel="nofollow" target="_blank" href="http://validator.w3.org/check?uri=referer">XHTML</a> | <a
+            rel="nofollow" target="_blank" href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | I
+        support OpenDesigns.org</p>
+</div>
+</div>
+{% endblock %}

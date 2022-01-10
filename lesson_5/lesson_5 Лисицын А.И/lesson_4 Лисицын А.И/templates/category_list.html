@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="header">
+    <h1>Another New Day</h1>
+</div>
+<h1>Список категорий</h1>
+<ul>
+
+    {% for item in objects_list %}
+    <li>
+        {{item.name}} <span>Количество курсов: {{item.course_count()}}</span>
+    </li>
+    {% endfor %}
+</ul>
+
+<div>
+    <li><a href="/course_list/">Список курсов</a></li>
+    <li><a href="/create_course/">Создать курс</a></li>
+</div>
+
+</div>
+{% endblock %}
